@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--day17 package indaki Classları paralel testing kullanarak 
+    2 driver ile çalıştırın-->
+
+<suite name="day17 class level paralel calistirma" parallel="classes" thread-count="2" verbose="4">
+    
+    <test name="Class level paralel calistirma">
+        
+        
+        
+        <packages>
+            <package name="tests.day17_testNG_POM"></package>
+        </packages>
+        
+    </test>
+    
+</suite>

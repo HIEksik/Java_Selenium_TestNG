@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- day15 ve day16 package larındaki tüm classlari calıştırın -->
+
+<suite name="package calistirma">
+    
+    <test name="day15 ve day16">
+        
+        <packages>
+            <package name="tests.day19_testNG_Reports"></package>
+
+
+            
+        </packages>
+        
+        
+        
+    </test>
+    
+    
+</suite>

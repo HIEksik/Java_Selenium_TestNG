@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--day17 package indaki Classları paralel testing kullanarak 
+    2 driver ile çalıştırın
+    
+    Eger browserlar arasında daha eşit bir yük dağılımı ve bir biri ile İlintili classların
+    tek browser tarafından çalıştırılmasını istersek browserların çalıştıracağı Class yada package ları test bazında 
+    kendimiz ayıra biliriz 
+    
+    Örnegin bu XML dosyasında C01,C02 yi 1 browser , kalanları 2. browser çalıştıracakşekilde paylaşım yapalım
+
+    verbose konsolda yazdırılan açıklamaların az veya çok olmasını tercih etmek için kullanılır
+    1 en az açıklama 10 en çok açıklama olarak kullanılır -->
+
+<suite name="day17 class level paralel calistirma" parallel="tests" thread-count="2" verbose="4">
+
+   <test name="browser1">
+       <classes>
+           <class name="tests.day17_testNG_POM.C01_Negatif_LoginTesti"></class>
+           <class name="tests.day17_testNG_POM.C02_UrunSepetiTesti"></class>
+           
+       </classes>
+       
+   </test>
+    
+    <test name="browser2">
+       <classes>
+           <class name="tests.day17_testNG_POM.C03_SwichingWindows"></class>
+           <class name="tests.day17_testNG_POM.C04_DriverClassSingletonPattern"></class>
+           <class name="tests.day17_testNG_POM.C05_Assertions"></class>
+       </classes> 
+        
+    </test>
+
+</suite>

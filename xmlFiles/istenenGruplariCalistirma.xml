@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--smoke testleri çalıştırın
+
+.xml dosyaları ile test methodlarını çalıştırırken
+
+2 hiyerarşi kullanıyoruz
+    **** <groups> ile çalıştırılacak veya çalıştırılmayacak grupları belirliyoruz
+    ****<groups> tagının dışında başka bir hiyerarşi ile çalıştırılacak test methodlarının hangi
+                 package veya class ların altında oldugunu gösteriyoruz
+
+
+            <include> olarak seçtiğimiz gruplar veya methodlar çalışır...
+            <exclude> olarak seçtiklerimiz çalışmaz
+            bir test methodunda ikiside varsa <exclude> geçirli olur ve çalışmaz
+
+          ** yani anlamı  ( <exclude> şu şu şu işaret  dışındakileri çalıştırdır )
+
+         **  exdent olarak bağladığımız testler çalışma sırasında sorun çıkarır ve Failed olur
+
+-->
+
+
+<suite name="Istenen gruplari calistirma">
+
+    <test name="smoke test grup olarak calistirma">
+
+        <groups>
+            
+            <run>
+                
+                <include name="smoke"></include>
+                <include name="regression"></include>
+                <exclude name="e2e"></exclude>
+            </run>
+            
+        </groups>
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+
+    </test>
+
+</suite>

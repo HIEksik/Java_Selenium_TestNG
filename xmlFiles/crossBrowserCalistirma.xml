@@ -1,0 +1,52 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- day20 crossbrowser calisacak testler packege deki tüm class lari hem chrome hemde edge ile çalıştırın
+
+
+        1- adım : xml dosyasında farklı browser lar için farklı test tagları oluşturalım
+        2- adım : xml dosyası çalışmaya başladıktan sonra manuel olarak configuration.properties dosyasına müdahale edip
+                    browser tercihini degiştirme şansımız olmadığından
+                    xml dosyasından browser tercihini bir parametre olarak YOLLAMAK zorundayız.
+
+        3- adım : Bizim yazdığımız ve bugüne kadar kullandığımız tüm @Test methodları
+                  WebDriver objesini Driver class ında oluşturuyordu.
+                  Driver class ı da hangi browser a ait webdriver oluşturacagı bilgisini de
+                  configuration.properties dosyasından alıyordu
+
+                  Bu yapıdan dolayı normal testlerimizin cross Browser çalışma ihitimali yoktur
+                  cross browser çalıştıracağımız testleri özel olarak DISAYN edecegiz. yapacagız
+
+
+                  Bu dizaynı yaparken iki tane yardımcımız olacak - Biri TestbaseCross  - digeri DriverCross
+
+
+-->
+
+<suite name="Cross Browser Testler">
+
+    <test name="chrome ile çalışacak testler">
+        <parameter name="crossBrowser" value="chrome"></parameter>
+
+        <packages>
+            <package name="tests.day20_crossBrowserCalisacakTestler"></package>
+        </packages>
+
+    </test>
+
+
+
+
+    <test name="Edge ile Çalışacak Testler">
+        <parameter name="crossBrowser" value="edge"></parameter>
+        <packages>
+
+            <package name="tests.day20_crossBrowserCalisacakTestler"></package>
+
+        </packages>
+
+    </test>
+
+
+</suite>
+
+
